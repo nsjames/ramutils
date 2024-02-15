@@ -32,18 +32,25 @@
 
 
 	</AppRail>
-	<section class="flex-1 mt-2 md:mt-0 mx-2">
-		{#if currentPage === 0}
-			<Buy />
-		{:else if currentPage === 1}
-			<Sell />
-		{:else if currentPage === 2}
-			<Transfer />
-		{:else if currentPage === 3}
-			<Burn />
-		{/if}
+	{#if !$account}
+		<section class="flex-1 mt-2 md:mt-0 mx-2">
+			<LoginFirst />
 
-	</section>
+		</section>
+	{:else}
+		<section class="flex-1 mt-2 md:mt-0 mx-2">
+			{#if currentPage === 0}
+				<Buy />
+			{:else if currentPage === 1}
+				<Sell />
+			{:else if currentPage === 2}
+				<Transfer />
+			{:else if currentPage === 3}
+				<Burn />
+			{/if}
+
+		</section>
+	{/if}
 </section>
 
 <script lang="ts">
@@ -52,6 +59,8 @@
 	import Sell from "../components/Sell.svelte";
 	import Transfer from "../components/Transfer.svelte";
 	import Burn from "../components/Burn.svelte";
+	import {account} from "../services/chain.service";
+	import LoginFirst from "../components/LoginFirst.svelte";
 
 	const pages = [
 		{
