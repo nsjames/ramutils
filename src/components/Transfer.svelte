@@ -1,5 +1,4 @@
 <section class="flex min-h-full w-full items-center justify-center">
-    <!-- glass bg -->
     <section class="min-w-full md:min-w-[400px] card variant-glass md:p-8 p-4">
 
         <h1 class="h1">Transfer RAM</h1>
