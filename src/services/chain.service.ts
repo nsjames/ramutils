@@ -237,7 +237,7 @@ export default class ChainService {
                     name: "ramburn",
                     authorization: [ChainService.session?.permissionLevel],
                     data: {
-                        account: ChainService.session?.actor.toString(),
+                        owner: ChainService.session?.actor.toString(),
                         bytes: value,
                         memo
                     }
